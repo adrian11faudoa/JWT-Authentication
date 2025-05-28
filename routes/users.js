@@ -1,12 +1,12 @@
 const mongoose = require('mongoose');
 const router = require('express').Router();   
-const passport = require('passport');
+//const passport = require('passport');
 const utils = require('../lib/utils');
-
 const User = require('../models/user');
 
 // TODO
-router.get('/protected', passport.authenticate('jwt', { session: false }), (req, res, next) => {
+router.get('/protected', utils.authMiddleware, (req, res, next) => {
+    //console.log(req.jwt);
     res.status(200).json({ success: true, msg: 'You are authorized!'});
 });
 
