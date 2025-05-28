@@ -19,7 +19,7 @@ module.exports = (passport) => {
     // The JWT payload is passed into the verify callback
     passport.use(new JwtStrategy(options, async (jwt_payload, done) => {
         try {
-        console.log(jwt_payload);
+        //console.log(jwt_payload);
 
         const user = await User.findOne({ _id: jwt_payload.sub });
 

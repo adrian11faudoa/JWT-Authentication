@@ -2,7 +2,6 @@ const mongoose = require('mongoose');
 const router = require('express').Router();   
 const passport = require('passport');
 const utils = require('../lib/utils');
-
 const User = require('../models/user');
 
 // TODO
